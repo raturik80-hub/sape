@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сапёр</title>
+    
+    <!-- Подключаем основной CSS из папки css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Подключаем CSS меню из папки css -->
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+
+    <!-- ЭКРАН НАЧАЛЬНОГО МЕНЮ -->
+    <div id="start-screen" class="start-screen">
+        <h1>💣 Сапёр</h1>
+        <p>Выберите уровень сложности, чтобы начать игру</p>
+        
+        <div class="menu-buttons">
+            <button class="menu-btn" onclick="startFromMenu('easy')">Лёгкая</button>
+            <button class="menu-btn" onclick="startFromMenu('medium')">Средняя</button>
+            <button class="menu-btn" onclick="startFromMenu('hard')">Сложная</button>
+        </div>
+    </div>
+
+    <!-- ОСНОВНАЯ ИГРА (скрыта за меню) -->
+    <div class="game">
+        <h1>💣 Сапёр</h1>
+
+        <div class="controls">
+            <label>Сложность:
+                <select id="difficulty">
+                    <option value="easy">Лёгкая (9×9, 10 мин)</option>
+                    <option value="medium" selected>Средняя (16×16, 40 мин)</option>
+                    <option value="hard">Сложная (16×30, 99 мин)</option>
+                </select>
+            </label>
+            <button id="restart">🔄 Новая игра</button>
+            <button id="to-menu">⬅ В меню</button>
+        </div>
+
+        <div class="status">
+            <span id="mines-left">💣 40</span>
+            <span id="timer">⏱ 0</span>
+            <span id="message"></span>
+        </div>
+
+        <div id="board" class="board"></div>
+    </div>
+
+    <!-- Подключаем JS из папки script -->
+    <script src="script/script.js"></script>
+</body>
+</html>
